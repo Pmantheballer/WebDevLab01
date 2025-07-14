@@ -25,4 +25,12 @@ st.pyplot(fig)  #NEW
 st.write("---")
 user_gpa = st.number_input("Enter your current GPA", min_value=0.0, max_value=5.0, step=0.01)  #NEW
 st.write(f"Your entered GPA: {user_gpa}")  #NEW
-
+select_semester = st.selectbox("Select a semester to highlight", df["Semester"])  #NEW
+highlighted = df[df["Semester"] == select_semester]  #NEW
+st.write(f"You selected: {select_semester} — GPA: {highlighted['GPA'].values[0]}")  #NEW
+if "gpa_list" not in st.session_state:  #NEW
+    st.session_state.gpa_list = []  #NEW
+if st.button("Add to GPA History"):  #NEW
+    st.session_state.gpa_list.append(user_gpa)  #NEW
+st.write("Your GPA History This Session:")  #NEW
+st.line_chart(st.session_state.gpa_list)  #NEW
