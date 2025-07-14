@@ -2,7 +2,7 @@
 #This File will contain the information to be displayed in your portfolio
 
 #CHANGE BELOW
-profile_picture = "images/Palmer.jpg"
+profile_picture = "images/Palmer.jpeg"
 about_me = "I'm Palmer Lindsley. I go to Georgia Tech. I am a freshman ignite attendee. "
 
 
